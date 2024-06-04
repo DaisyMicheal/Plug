@@ -29,12 +29,10 @@ const Trends = () => {
           </div>
         ))}
       </div>
-    
+
       <SuggestedFollower />
     </div>
   )
 }
 
 export default Trends
-
-// src/components/UserDashboard/PostList/Trends.js

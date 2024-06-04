@@ -1,4 +1,3 @@
-// src/components/MessagePanel/MessagePanel.js
 import React from 'react'
 
 const MessagePanel = () => {
@@ -8,7 +7,6 @@ const MessagePanel = () => {
         <div className='p-4 border-b border-gray-700'>
           <h1 className='text-xl'>Messages</h1>
         </div>
-        {/* Message list goes here */}
       </div>
       <div className='w-2/3'>
         <div className='p-4 border-b border-gray-700 flex justify-between items-center'>

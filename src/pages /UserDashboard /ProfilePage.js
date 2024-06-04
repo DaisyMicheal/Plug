@@ -1,12 +1,3 @@
-import {
-  Container,
-  Flex,
-  Link,
-  Skeleton,
-  SkeletonCircle,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
 import ProfileHeader from '../../Components/UserDashboard/Profile/ProfileHeader'
 import ProfileTabs from '../../Components/UserDashboard/Profile/ProfileTabs'
 import ProfilePosts from '../../Components/UserDashboard/Profile/ProfilePosts'
@@ -22,30 +13,16 @@ const ProfilePage = () => {
   if (userNotFound) return <UserNotFound />
 
   return (
-    <Container maxW='container.lg' py={5}>
-      <Flex
-        py={10}
-        px={4}
-        pl={{ base: 4, md: 10 }}
-        w={'full'}
-        mx={'auto'}
-        flexDirection={'column'}
-      >
+    <div className='container max-w-7xl py-5'>
+      <div className='py-10 px-4 md:pl-10 w-full mx-auto flex flex-col'>
         {!isLoading && userProfile && <ProfileHeader />}
         {isLoading && <ProfileHeaderSkeleton />}
-      </Flex>
-      <Flex
-        px={{ base: 2, sm: 4 }}
-        maxW={'full'}
-        mx={'auto'}
-        borderTop={'1px solid'}
-        borderColor={'whiteAlpha.300'}
-        direction={'column'}
-      >
+      </div>
+      <div className='px-2 sm:px-4 max-w-full mx-auto border-t border-white/30 flex flex-col'>
         <ProfileTabs />
         <ProfilePosts />
-      </Flex>
-    </Container>
+      </div>
+    </div>
   )
 }
 
@@ -54,41 +31,23 @@ export default ProfilePage
 // skeleton for profile header
 const ProfileHeaderSkeleton = () => {
   return (
-    <Flex
-      gap={{ base: 4, sm: 10 }}
-      py={10}
-      direction={{ base: 'column', sm: 'row' }}
-      justifyContent={'center'}
-      alignItems={'center'}
-    >
-      <SkeletonCircle size='24' />
-
-      <VStack
-        alignItems={{ base: 'center', sm: 'flex-start' }}
-        gap={2}
-        mx={'auto'}
-        flex={1}
-      >
-        <Skeleton height='12px' width='150px' />
-        <Skeleton height='12px' width='100px' />
-      </VStack>
-    </Flex>
+    <div className='flex gap-4 sm:gap-10 py-10 flex-col sm:flex-row justify-center items-center'>
+      <div className='skeleton-circle w-24 h-24 rounded-full bg-gray-200'></div>
+      <div className='flex flex-col gap-2 mx-auto flex-1 items-center sm:items-start'>
+        <div className='skeleton h-3 w-36 bg-gray-200'></div>
+        <div className='skeleton h-3 w-24 bg-gray-200'></div>
+      </div>
+    </div>
   )
 }
 
 const UserNotFound = () => {
   return (
-    <Flex flexDir='column' textAlign={'center'} mx={'auto'}>
-      <Text fontSize={'2xl'}>User Not Found</Text>
-      <Link
-        as={RouterLink}
-        to={'/'}
-        color={'blue.500'}
-        w={'max-content'}
-        mx={'auto'}
-      >
+    <div className='flex flex-col text-center mx-auto'>
+      <div className='text-2xl'>User Not Found</div>
+      <RouterLink to='/' className='text-blue-500 w-max mx-auto'>
         Go home
-      </Link>
-    </Flex>
+      </RouterLink>
+    </div>
   )
 }
