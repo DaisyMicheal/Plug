@@ -1,0 +1,42 @@
+/* Customize Giphy picker styles */
+.react-giphy-picker {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  background-color: #0a0a0a; /* Set background color */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 8px; /* Add border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.react-giphy-picker .react-giphy-searchbox {
+  padding: 10px; /* Adjust padding */
+  border-bottom: 1px solid #ccc; /* Add border bottom */
+}
+
+.react-giphy-picker .react-giphy-categories {
+  padding: 10px; /* Adjust padding */
+  border-bottom: 1px solid #ccc; /* Add border bottom */
+}
+
+.react-giphy-picker .react-giphy-gif {
+  padding: 10px; /* Adjust padding */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.react-giphy-picker .react-giphy-gif img {
+  max-width: 100%; /* Ensure GIFs fit within container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.react-giphy-picker .react-giphy-pagination {
+  padding: 10px; /* Adjust padding */
+}
+
+.react-giphy-picker .react-giphy-pagination button {
+  background-color: transparent; /* Set button background to transparent */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.react-giphy-picker .react-giphy-pagination button:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
