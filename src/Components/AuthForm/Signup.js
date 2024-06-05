@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../../firebase/firebase'
 import useSignUpWithEmailAndPassword from '../../hooks/useSignUpWithEmailAndPassword'
 
 const Signup = () => {
@@ -12,6 +14,13 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false)
   const { loading, error, signup } = useSignUpWithEmailAndPassword()
   const navigate = useNavigate()
+  const [authUser] = useAuthState(auth)
+
+  useEffect(() => {
+    if (authUser) {
+      navigate('/userdashboard')
+    }
+  }, [authUser, navigate])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -24,7 +33,7 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       await signup(inputs)
-      navigate('/UserDashboard')
+      navigate('/userdashboard')
     } catch (error) {
       console.error('Signup error:', error)
     }

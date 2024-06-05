@@ -1,4 +1,3 @@
-
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { auth, firestore } from '../firebase/firebase'
 import {
@@ -10,7 +9,7 @@ import {
   where,
 } from 'firebase/firestore'
 import useShowToast from './useShowToast'
-import useAuthStore from '../store /authStore' // Fixed import path typo
+import useAuthStore from '../store /authStore'
 
 const useSignUpWithEmailAndPassword = () => {
   const [createUserWithEmailAndPassword, , loading, error] =

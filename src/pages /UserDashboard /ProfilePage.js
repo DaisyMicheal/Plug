@@ -28,7 +28,6 @@ const ProfilePage = () => {
 
 export default ProfilePage
 
-// skeleton for profile header
 const ProfileHeaderSkeleton = () => {
   return (
     <div className='flex gap-4 sm:gap-10 py-10 flex-col sm:flex-row justify-center items-center'>
